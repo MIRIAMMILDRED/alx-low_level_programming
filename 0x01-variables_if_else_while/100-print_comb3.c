@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Entry point
  *
@@ -7,32 +6,21 @@
  */
 int main(void)
 {
-	int h = '0'; /* digit at hundredth location */
-	int t = '1'; /* digit at tenth location */
-	int u = '2'; /* digit at unit location */
+	int i;
+	int j;
 
-	while (h <= '7')
+	for (i = '0'; i <= '9'; ++i)
 	{
-		while (t <= '8')
+		for (j = i + 1; j <= '9'; ++j) /* j starts from i + 1 to avoid repetition */
 		{
-			while (u <= '9')
+			putchar(i);
+			putchar(j);
+			if (i != '8' || j != '9')
 			{
-				putchar(h);
-				putchar(t);
-				putchar(u);
-				if (h != '7' || t != '8' || u != '9')
-				{
-					putchar(',');
-					putchar(' ');
-				}
-				u++;
+				putchar(',');
+				putchar(' ');
 			}
-			t++;
-			u = t + 1;
 		}
-		h++;
-		t = h + 1;
-		u = t + 1;
 	}
 	putchar('\n');
 	return (0);

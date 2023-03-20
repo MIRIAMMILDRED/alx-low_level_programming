@@ -1,34 +1,39 @@
 #include <stdio.h>
+
 /**
- * main - entry
- * Description: 'all digits it twos'
- * Return: always 0
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int r = 0;
+	int h = '0'; /* digit at hundredth location */
+	int t = '1'; /* digit at tenth location */
+	int u = '2'; /* digit at unit location */
 
-	while (r < 90)
+	while (h <= '7')
 	{
-		int m = r + 1;
-
-		while (m < 100)
+		while (t <= '8')
 		{
-			putchar(r / 10 + '0');
-			putchar(r % 10 + '0');
-			putchar(',');
-			putchar(' ');
-			putchar(m / 10 + '0');
-			putchar(m % 10 + '0');
-				if (r != 98)
+			while (u <= '9')
+			{
+				putchar(h);
+				putchar(t);
+				putchar(u);
+				if (h != '7' || t != '8' || u != '9')
 				{
 					putchar(',');
 					putchar(' ');
 				}
-			m++;
+				u++;
+			}
+			t++;
+			u = t + 1;
 		}
-		r++;
+		h++;
+		t = h + 1;
+		u = t + 1;
 	}
-		putchar('\n');
+	putchar('\n');
 	return (0);
 }

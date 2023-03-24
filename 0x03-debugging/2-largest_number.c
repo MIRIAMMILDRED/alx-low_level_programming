@@ -27,7 +27,6 @@ largest = b;
 else
 {
 largest = c;
-nclude "main.h"
 }
 return (largest);
 }
